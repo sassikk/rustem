@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Откосы и подоконники в Казани — мастер Рустем</title>
+<meta name="description" content="Замена и установка откосов и подоконников в Казани. Точная цена по 3 фото, договор, гарантия 6 месяцев. 8+ лет опыта.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #DC4A3D;
+  --accent-dark: #B33A2E;
+  --accent-soft: rgba(220, 74, 61, 0.08);
+  --text: #1A1A1A;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #E5E5E5;
+  --bg: #FFFFFF;
+  --bg-cream: #F5ECE2;
+  --green: #16A34A;
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Onest', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body.modal-open { overflow: hidden; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* DECORATIONS */
+.section-mark {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+.hl {
+  background: var(--accent);
+  color: #FFF;
+  padding: 0 10px;
+  border-radius: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.section-cream { background: var(--bg-cream); }
+.quote-mark {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 44px;
+  line-height: 0.4;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+  height: 18px;
+}
+
+/* HERO */
+.hero { padding: 40px 0 48px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4.4vw, 52px);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 14px;
+}
+.hero h2 {
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.35;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 26px;
+}
+
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo.placeholder {
+  background: #EAEAEA;
+  border: 1px solid var(--border);
+}
+.hero-photo.placeholder::after {
+  content: 'Фото мастера';
+  color: #999;
+  font-size: 14px;
+  position: absolute;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.quote-side-photo { display: none; }
+
+.quote-card {
+  background: var(--bg-cream);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.hero-text {
+  background: var(--bg-cream);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 720px) {
+  .hero { padding: 64px 0 72px; }
+  .hero-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+  }
+  .cta-row { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 719px) {
+  .hero-photo { display: none; }
+  .quote-card-row {
+    --photo-w: clamp(100px, 26vw, 150px);
+    position: relative;
+  }
+  .quote-card-row .quote-card {
+    padding-right: calc(var(--photo-w) + 22px);
+  }
+  .quote-side-photo {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 8px;
+    width: var(--photo-w);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 6%;
+    border-radius: 10px;
+    pointer-events: none;
+  }
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 16px 22px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.05s ease;
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--accent);
+  color: #FFF;
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-secondary:hover { background: var(--accent-soft); }
+
+@media (max-width: 719px) {
+  .btn { width: 100%; padding: 17px 20px; }
+}
+
+/* SECTIONS */
+section { padding: 48px 0; }
+@media (min-width: 720px) { section { padding: 72px 0; } }
+
+section h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  max-width: 680px;
+  line-height: 1.55;
+}
+
+/* CHECKLIST */
+.checklist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 760px;
+}
+@media (min-width: 720px) {
+  .checklist { grid-template-columns: 1fr 1fr; gap: 18px 36px; }
+}
+.checklist li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.checklist .check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--green);
+}
+
+/* REVIEWS */
+.reviews-line {
+  font-size: 18px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.reviews-line a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.reviews-line a:hover { color: var(--accent-dark); }
+
+.reviews-text {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  max-width: 680px;
+  line-height: 1.6;
+}
+.reviews-text:last-of-type { margin-bottom: 30px; }
+
+/* INLINE PHONE FORM */
+.phone-form-wrap {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease;
+}
+.phone-form-wrap.open { max-height: 400px; }
+
+.phone-form {
+  margin-top: 14px;
+  padding: 18px;
+  background: var(--bg-cream);
+  border-radius: 14px;
+}
+
+.phone-form-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.phone-form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.phone-input {
+  flex: 1 1 200px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: #FFF;
+  color: var(--text);
+  min-width: 0;
+  transition: border-color 0.15s ease;
+}
+.phone-input:focus { border-color: var(--accent); outline: none; }
+
+.phone-form .btn-primary { padding: 14px 22px; flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  .phone-form-row { flex-direction: column; }
+  .phone-form .btn-primary { width: 100%; }
+}
+
+/* FOOTER */
+footer {
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: auto; }
+
+.modal {
+  background: #FFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  padding: 28px 24px 24px;
+  position: relative;
+  transform: scale(0.96);
+  transition: transform 0.18s ease;
+}
+.modal-overlay.open .modal { transform: scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background 0.15s ease;
+}
+.modal-close:hover { background: var(--bg-cream); }
+
+.modal h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-right: 30px;
+  letter-spacing: -0.01em;
+}
+
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channel-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #FFF;
+  color: var(--text);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.channel-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+.channel-btn.recommended { border-color: var(--accent); }
+.channel-btn .channel-caption {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Откосы и подоконники в Казани — замена и установка</h1>
+          <h2>Назову точную цену по фото — приеду и сделаю за 1 день</h2>
+
+          <div class="quote-card-row">
+            <div class="quote-card">
+              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+              <strong>Меня зовут Рустем.</strong> Делаю откосы и подоконники <strong>сам, без посредников и менеджеров</strong>. Уже 8+ лет, 2000+ объектов.
+            </div>
+            <img class="quote-side-photo" src="rustem.png" alt="" onerror="this.style.display='none'">
+          </div>
+
+          <p class="hero-text">
+            Скиньте 3 фото в чат — назову <strong>точную цену в тот же день</strong>. Приеду на замер, <strong>зафиксируем в договоре</strong>. На замере либо столько же, либо меньше — <strong>но не больше</strong>.
+          </p>
+
+          <div class="cta-row">
+            <button type="button" class="btn btn-primary" data-cta="photo">Узнать цену по фото</button>
+            <button type="button" class="btn btn-secondary" data-cta="phone" aria-expanded="false" aria-controls="phone-form-1">Оставить номер — перезвоню</button>
+          </div>
+
+          <div class="phone-form-wrap" id="phone-form-1">
+            <form class="phone-form" data-form="phone" novalidate>
+              <label class="phone-form-label" for="phone-input-1">Перезвоню в течение часа</label>
+              <div class="phone-form-row">
+                <input type="tel" id="phone-input-1" class="phone-input" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required aria-label="Номер телефона">
+                <button type="submit" class="btn btn-primary">Отправить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="rustem.png" alt="Рустем — мастер по откосам и подоконникам в Казани" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cream">
+    <div class="container">
+      <div class="section-mark" aria-hidden="true"></div>
+      <h2><span class="hl">Никаких</span> «приедем — там скажем»</h2>
+      <p class="lead">Большинство мастеров называют цену по факту, после работы. У меня — наоборот: <strong>сначала точная цена, потом работа.</strong></p>
+
+      <ul class="checklist">
+        <li>
+          <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Точная цена <strong>по 3 фото</strong> — отвечу в течение часа</span>
+        </li>
+        <li>
+          <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>На замере фиксирую в договоре — <strong>дороже не станет</strong></span>
+        </li>
+        <li>
+          <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Гарантия 6 месяцев — <strong>прописана в договоре, не на словах</strong></span>
+        </li>
+        <li>
+          <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Сделаю за 1 день — уеду, и забудете про откосы</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-mark" aria-hidden="true"></div>
+      <h2>Отзывы вместо рекламы</h2>
+      <p class="reviews-line"><strong>224 отзыва с рейтингом 5,0 на Авито.</strong> <a href="#avito-link">Посмотреть профиль →</a></p>
+      <p class="reviews-text">У меня нет колл-центра, нет менеджеров и нет навязчивых звонков «только сегодня скидка». Я просто мастер, который <strong>8+ лет</strong> занимается окнами и сам приезжает к вам.</p>
+      <p class="reviews-text">Работаю по Казани и в радиусе 50 км. Беру 2–3 заказа в день — не больше, чтобы делать качественно.</p>
+
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" data-cta="photo">Узнать цену по фото</button>
+        <button type="button" class="btn btn-secondary" data-cta="phone" aria-expanded="false" aria-controls="phone-form-2">Оставить номер — перезвоню</button>
+      </div>
+
+      <div class="phone-form-wrap" id="phone-form-2">
+        <form class="phone-form" data-form="phone" novalidate>
+          <label class="phone-form-label" for="phone-input-2">Перезвоню в течение часа</label>
+          <div class="phone-form-row">
+            <input type="tel" id="phone-input-2" class="phone-input" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" required aria-label="Номер телефона">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    Рустем — мастер по откосам и подоконникам, Казань. <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="channel-modal" role="dialog" aria-modal="true" aria-labelledby="channel-modal-title" aria-hidden="true">
+  <div class="modal">
+    <button type="button" class="modal-close" aria-label="Закрыть" data-close-modal>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <h3 id="channel-modal-title">Куда скинуть фото?</h3>
+    <div class="channel-list">
+      <a class="channel-btn recommended" data-channel="max" href="#" target="_blank" rel="noopener">
+        MAX
+        <span class="channel-caption">быстрее всего отвечу</span>
+      </a>
+      <a class="channel-btn" data-channel="telegram" href="#" target="_blank" rel="noopener">Telegram</a>
+      <a class="channel-btn" data-channel="phone" href="#">Позвонить</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function trackPhotoButtonClick() { console.log('analytics: photo_button_click'); }
+  function trackChannelClick(channel) { console.log('analytics: channel_click', channel); }
+  function trackPhoneFormSubmit() { console.log('analytics: phone_form_submit'); }
+  function trackPhoneFormShown() { console.log('analytics: phone_form_shown'); }
+
+  var presetMessage = 'Здравствуйте, Рустем. Хочу узнать цену на откосы и подоконники, прикладываю фото';
+  var enc = encodeURIComponent(presetMessage);
+  var channels = {
+    max: 'max://im?text=' + enc,
+    telegram: 'https://t.me/PLACEHOLDER?text=' + enc,
+    phone: 'tel:+7XXXXXXXXXX'
+  };
+  document.querySelectorAll('.channel-btn').forEach(function(a){
+    var ch = a.getAttribute('data-channel');
+    if (channels[ch]) a.setAttribute('href', channels[ch]);
+    a.addEventListener('click', function(){ trackChannelClick(ch); });
+  });
+
+  var modal = document.getElementById('channel-modal');
+  var lastTrigger = null;
+  function openModal(trigger) {
+    lastTrigger = trigger || null;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    var closeBtn = modal.querySelector('[data-close-modal]');
+    setTimeout(function(){ closeBtn && closeBtn.focus(); }, 50);
+    trackPhotoButtonClick();
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
+  }
+  modal.addEventListener('click', function(e){
+    if (e.target === modal || e.target.closest('[data-close-modal]')) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+  document.querySelectorAll('[data-cta="photo"]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn); });
+  });
+
+  document.querySelectorAll('[data-cta="phone"]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('aria-controls');
+      var wrap = document.getElementById(id);
+      if (!wrap) return;
+      var willOpen = !wrap.classList.contains('open');
+      wrap.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      if (willOpen) {
+        trackPhoneFormShown();
+        setTimeout(function(){
+          var input = wrap.querySelector('input');
+          if (input) input.focus();
+        }, 280);
+      }
+    });
+  });
+
+  function getDigits(value) { return (value || '').replace(/\D/g, ''); }
+  function formatPhone(digits) {
+    if (!digits.length) return '';
+    if (digits[0] === '8') digits = '7' + digits.slice(1);
+    if (digits[0] !== '7') digits = '7' + digits;
+    digits = digits.slice(0, 11);
+    var out = '+7';
+    if (digits.length > 1) out += ' (' + digits.slice(1, 4);
+    if (digits.length >= 4) out += ')';
+    if (digits.length >= 5) out += ' ' + digits.slice(4, 7);
+    if (digits.length >= 8) out += '-' + digits.slice(7, 9);
+    if (digits.length >= 10) out += '-' + digits.slice(9, 11);
+    return out;
+  }
+
+  document.querySelectorAll('.phone-input').forEach(function(input){
+    input.addEventListener('input', function(){
+      input.value = formatPhone(getDigits(input.value));
+    });
+    input.addEventListener('focus', function(){
+      if (!input.value) input.value = '+7 ';
+    });
+    input.addEventListener('blur', function(){
+      if (input.value === '+7 ' || input.value === '+7') input.value = '';
+    });
+  });
+
+  document.querySelectorAll('[data-form="phone"]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = form.querySelector('.phone-input');
+      var digits = getDigits(input.value);
+      if (digits.length !== 11) {
+        input.focus();
+        input.style.borderColor = '#DC2626';
+        setTimeout(function(){ input.style.borderColor = ''; }, 1400);
+        return;
+      }
+      trackPhoneFormSubmit();
+      alert('Спасибо, перезвоню!');
+      input.value = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
