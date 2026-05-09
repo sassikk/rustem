@@ -168,24 +168,18 @@ input:focus-visible {
 
 @media (max-width: 719px) {
   .hero-photo { display: none; }
-  .quote-card-row {
-    --photo-w: clamp(100px, 26vw, 150px);
-    position: relative;
-  }
   .quote-card-row .quote-card {
-    padding-right: calc(var(--photo-w) + 22px);
+    display: flow-root;
   }
   .quote-side-photo {
     display: block;
-    position: absolute;
-    bottom: 0;
-    right: 8px;
-    width: var(--photo-w);
-    aspect-ratio: 4 / 5;
+    float: right;
+    width: 96px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: center 6%;
-    border-radius: 10px;
-    pointer-events: none;
+    object-position: center 18%;
+    border-radius: 50%;
+    margin: 0 0 10px 14px;
   }
 }
 
@@ -451,10 +445,10 @@ footer a:hover { color: var(--accent); }
 
           <div class="quote-card-row">
             <div class="quote-card">
+              <img class="quote-side-photo" src="rustem.png" alt="" onerror="this.style.display='none'">
               <span class="quote-mark" aria-hidden="true">&ldquo;</span>
               <strong>Меня зовут Рустем.</strong> Делаю откосы и подоконники <strong>сам, без посредников и менеджеров</strong>. Уже 8+ лет, 2000+ объектов.
             </div>
-            <img class="quote-side-photo" src="rustem.png" alt="" onerror="this.style.display='none'">
           </div>
 
           <p class="hero-text">
