@@ -514,7 +514,13 @@ footer a:hover { color: var(--accent); }
       wrap.classList.toggle('open', willOpen);
       btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
       trackPhotoButtonClick();
-      if (willOpen) trackChannelsShown();
+      if (willOpen) {
+        trackChannelsShown();
+        // Дождаться окончания анимации max-height (~320ms) и подвинуть блок в зону видимости
+        setTimeout(function(){
+          wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 340);
+      }
     });
   });
 })();
