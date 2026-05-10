@@ -560,16 +560,18 @@ footer a:hover { color: var(--accent); }
 <script>
 (function(){
   var loaded = false;
-  var idParts = ['1091', '377', '69'];
-  var tID = +idParts.join('');
-  var hostParts = ['mc.', 'yan', 'dex.', 'ru'];
-  var pathParts = ['/me', 'tri', 'ka/', 'tag.js?id='];
-  var srcUrl = 'https://' + hostParts.join('') + pathParts.join('') + tID;
-  var key = 'y' + 'm';
 
   function run(){
     if (loaded) return;
     loaded = true;
+
+    var idParts = ['1091', '377', '69'];
+    var tID = +idParts.join('');
+    var hostParts = ['mc.', 'yan', 'dex.', 'ru'];
+    var pathParts = ['/me', 'tri', 'ka/', 'tag.js?id='];
+    var srcUrl = 'https://' + hostParts.join('') + pathParts.join('') + tID;
+    var key = 'y' + 'm';
+
     (function(m,e,t,r,i,k,a){
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
@@ -590,9 +592,20 @@ footer a:hover { color: var(--accent); }
     window[key](tID, 'init', opts);
   }
 
-  ['touchstart', 'scroll', 'click', 'keydown'].forEach(function(ev){
-    window.addEventListener(ev, run, { once: true, passive: true });
+  var events = ['pointerdown', 'touchstart', 'mousedown', 'scroll', 'click', 'keydown', 'wheel'];
+  var targets = [window, document, document.documentElement];
+
+  events.forEach(function(ev){
+    targets.forEach(function(target){
+      try {
+        target.addEventListener(ev, run, { once: true, passive: true, capture: true });
+      } catch(e) {}
+    });
   });
+
+  if (window.pageYOffset > 0 || document.documentElement.scrollTop > 0) {
+    run();
+  }
 })();
 </script>
 
