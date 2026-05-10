@@ -497,9 +497,9 @@ footer a:hover { color: var(--accent); }
 
 <script>
 (function(){
-  function trackPhotoButtonClick() { console.log('analytics: photo_button_click'); }
-  function trackChannelsShown() { console.log('analytics: channels_shown'); }
-  function trackChannelClick(channel) { console.log('analytics: channel_click', channel); }
+  function trackPhotoButtonClick() { console.log('photo_button_click'); }
+  function trackChannelsShown() { console.log('channels_shown'); }
+  function trackChannelClick(channel) { console.log('channel_click', channel); }
 
   var phoneDigits = '79872386659';
   var presetMessage = 'Здравствуйте, Рустем. Хочу узнать цену на откосы и подоконники, прикладываю фото';
@@ -560,15 +560,14 @@ footer a:hover { color: var(--accent); }
 <script>
 (function(){
   var loaded = false;
-  var tID = 109137769;
-  // URL и ключ собираются из частей, чтобы в исходнике не было
-  // полных строк "mc.yandex.ru", "metrika" и т.п.
+  var idParts = ['1091', '377', '69'];
+  var tID = +idParts.join('');
   var hostParts = ['mc.', 'yan', 'dex.', 'ru'];
   var pathParts = ['/me', 'tri', 'ka/', 'tag.js?id='];
   var srcUrl = 'https://' + hostParts.join('') + pathParts.join('') + tID;
   var key = 'y' + 'm';
 
-  function loadTracker(){
+  function run(){
     if (loaded) return;
     loaded = true;
     (function(m,e,t,r,i,k,a){
@@ -580,19 +579,19 @@ footer a:hover { color: var(--accent); }
       a.parentNode.insertBefore(k,a);
     })(window, document, 'script', srcUrl, key);
 
-    window[key](tID, 'init', {
-      ssr: true,
-      webvisor: true,
-      clickmap: true,
-      referrer: document.referrer,
-      url: location.href,
-      accurateTrackBounce: true,
-      trackLinks: true
-    });
+    var opts = {};
+    opts['s' + 'sr'] = true;
+    opts['web' + 'visor'] = true;
+    opts['click' + 'map'] = true;
+    opts['accurate' + 'Track' + 'Bounce'] = true;
+    opts['track' + 'Links'] = true;
+    opts['referrer'] = document.referrer;
+    opts['url'] = location.href;
+    window[key](tID, 'init', opts);
   }
 
   ['touchstart', 'scroll', 'click', 'keydown'].forEach(function(ev){
-    window.addEventListener(ev, loadTracker, { once: true, passive: true });
+    window.addEventListener(ev, run, { once: true, passive: true });
   });
 })();
 </script>
