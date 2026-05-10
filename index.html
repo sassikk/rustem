@@ -20,7 +20,7 @@
   --bg: #FFFFFF;
   --bg-cream: #F5ECE2;
   --green: #16A34A;
-  --max-width: 1100px;
+  --max-width: 980px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -88,18 +88,18 @@ input:focus-visible {
 }
 
 .hero h1 {
-  font-size: clamp(28px, 4.4vw, 52px);
-  line-height: 1.12;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .hero h2 {
-  font-size: clamp(18px, 2.4vw, 24px);
-  line-height: 1.35;
+  font-size: clamp(17px, 1.9vw, 20px);
+  line-height: 1.4;
   font-weight: 500;
   color: var(--text-secondary);
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .hero-photo {
@@ -156,13 +156,23 @@ input:focus-visible {
 }
 
 @media (min-width: 720px) {
-  .hero { padding: 64px 0 72px; }
+  .hero { padding: 48px 0 56px; }
   .hero-grid {
-    grid-template-columns: 1.15fr 1fr;
-    gap: 56px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 44px;
+  }
+  .hero-photo {
+    max-width: 320px;
+    margin-left: auto;
+    align-self: end;
   }
   .cta-row { flex-direction: row; flex-wrap: wrap; }
+  /* Никаких висячих предлогов/союзов на десктопе */
+  .nb { white-space: nowrap; }
 }
+
+.hero-content > .hero-text { margin-bottom: 0; }
+.hero .container > .cta-row { margin-top: 22px; }
 
 @media (max-width: 719px) {
   .hero-photo { display: none; }
@@ -374,46 +384,46 @@ footer a:hover { color: var(--accent); }
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1>Откосы и подоконники в Казани — замена и установка</h1>
-          <h2>Назову точную цену по фото — приеду и сделаю за 1 день</h2>
+          <h1>Откосы <span class="nb">и подоконники</span> <span class="nb">в Казани</span> — замена <span class="nb">и установка</span></h1>
+          <h2>Назову точную цену <span class="nb">по фото</span> — приеду <span class="nb">и сделаю</span> <span class="nb">за 1 день</span></h2>
 
           <div class="quote-card-row">
             <div class="quote-card">
               <span class="quote-mark" aria-hidden="true">&ldquo;</span>
               <span class="quote-side-photo" aria-hidden="true"><img src="rustemjpg.jpg" alt="" onerror="this.parentElement.style.display='none'"></span>
-              <strong>Меня зовут Рустем.</strong> Делаю откосы и подоконники <strong>сам, без посредников и менеджеров</strong>. Уже 8+ лет, 2000+ объектов.
+              <strong>Меня зовут Рустем.</strong> Делаю откосы <span class="nb">и подоконники</span> <strong>сам, <span class="nb">без посредников</span> <span class="nb">и менеджеров</span></strong>. Уже <span class="nb">8+ лет</span>, <span class="nb">2000+ объектов</span>.
             </div>
           </div>
 
           <p class="hero-text">
-            Скиньте 3 фото в чат — назову <strong>точную цену в тот же день</strong>. Если устроит, приеду на замер, <strong>зафиксируем её в договоре</strong>.
+            Скиньте <span class="nb">3 фото</span> <span class="nb">в чат</span> — назову <strong>точную цену <span class="nb">в тот</span> <span class="nb">же день</span></strong>. Если устроит, приеду <span class="nb">на замер</span>, <strong>зафиксируем её <span class="nb">в договоре</span></strong>.
           </p>
-
-          <div class="cta-row">
-            <button type="button" class="btn btn-primary" data-cta="photo" aria-expanded="false" aria-controls="photo-channels-1">Узнать цену по фото</button>
-          </div>
-
-          <div class="channels-wrap" id="photo-channels-1">
-            <div class="channels-block">
-              <div class="channels-label">Куда удобнее скинуть фото?</div>
-              <div class="channels-hint">Откроется чат — напишите коротко о проблеме и приложите 3 фото</div>
-              <div class="channel-list">
-                <a class="channel-btn recommended" data-channel="max" href="#" target="_blank" rel="noopener">
-                  В MAX
-                  <span class="channel-caption">быстрее всего отвечу</span>
-                </a>
-                <a class="channel-btn" data-channel="telegram" href="#" target="_blank" rel="noopener">В Telegram</a>
-                <a class="channel-btn" data-channel="phone" href="#">
-                  Позвонить мне
-                  <span class="channel-caption">+7 (987) 238-66-59</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="hero-photo">
           <img src="rustem.png" alt="Рустем — мастер по откосам и подоконникам в Казани" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder');">
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" data-cta="photo" aria-expanded="false" aria-controls="photo-channels-1">Узнать цену по фото</button>
+      </div>
+
+      <div class="channels-wrap" id="photo-channels-1">
+        <div class="channels-block">
+          <div class="channels-label">Куда удобнее скинуть фото?</div>
+          <div class="channels-hint">Откроется чат — напишите коротко о проблеме и приложите 3 фото</div>
+          <div class="channel-list">
+            <a class="channel-btn recommended" data-channel="max" href="#" target="_blank" rel="noopener">
+              В MAX
+              <span class="channel-caption">быстрее всего отвечу</span>
+            </a>
+            <a class="channel-btn" data-channel="telegram" href="#" target="_blank" rel="noopener">В Telegram</a>
+            <a class="channel-btn" data-channel="phone" href="#">
+              Позвонить мне
+              <span class="channel-caption">+7 (987) 238-66-59</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -423,24 +433,24 @@ footer a:hover { color: var(--accent); }
     <div class="container">
       <div class="section-mark" aria-hidden="true"></div>
       <h2><span class="hl">Никаких</span> «приедем — там скажем»</h2>
-      <p class="lead">Большинство мастеров называют цену по факту, после работы. У меня — наоборот: <strong>сначала точная цена, потом работа.</strong></p>
+      <p class="lead">Большинство мастеров называют цену <span class="nb">по факту</span>, после работы. <span class="nb">У меня</span> — наоборот: <strong>сначала точная цена, потом работа.</strong></p>
 
       <ul class="checklist">
         <li>
           <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Точная цена <strong>по 3 фото</strong> — отвечу в течение часа</span>
+          <span>Точная цена <strong><span class="nb">по 3 фото</span></strong> — отвечу <span class="nb">в течение</span> часа</span>
         </li>
         <li>
           <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>На замере фиксирую в договоре — <strong>дороже не станет</strong></span>
+          <span><span class="nb">На замере</span> фиксирую <span class="nb">в договоре</span> — <strong>дороже <span class="nb">не станет</span></strong></span>
         </li>
         <li>
           <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Гарантия 6 месяцев — <strong>прописана в договоре, не на словах</strong></span>
+          <span>Гарантия <span class="nb">6 месяцев</span> — <strong>прописана <span class="nb">в договоре</span>, <span class="nb">не на словах</span></strong></span>
         </li>
         <li>
           <svg class="check-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Сделаю за 1 день — уеду, и забудете про откосы</span>
+          <span>Сделаю <span class="nb">за 1 день</span> — уеду, <span class="nb">и забудете</span> <span class="nb">про откосы</span></span>
         </li>
       </ul>
     </div>
@@ -450,9 +460,9 @@ footer a:hover { color: var(--accent); }
     <div class="container">
       <div class="section-mark" aria-hidden="true"></div>
       <h2>Отзывы вместо рекламы</h2>
-      <p class="reviews-line"><strong>224 отзыва с рейтингом 5,0 на Авито.</strong> <a href="#avito-link">Посмотреть профиль →</a></p>
-      <p class="reviews-text">У меня нет колл-центра, нет менеджеров и нет навязчивых звонков «только сегодня скидка». Я просто мастер, который <strong>8+ лет</strong> занимается окнами и сам приезжает к вам.</p>
-      <p class="reviews-text">Работаю по Казани и в радиусе 50 км. Беру 2–3 заказа в день — не больше, чтобы делать качественно.</p>
+      <p class="reviews-line"><strong>224 отзыва <span class="nb">с рейтингом</span> 5,0 <span class="nb">на Авито</span>.</strong> <a href="https://www.avito.ru/brands/i144098087" target="_blank" rel="noopener">Посмотреть профиль →</a></p>
+      <p class="reviews-text"><span class="nb">У меня</span> нет колл-центра, нет менеджеров <span class="nb">и нет</span> навязчивых звонков «только сегодня скидка». Я просто мастер, который <strong><span class="nb">8+ лет</span></strong> занимается окнами <span class="nb">и сам</span> приезжает <span class="nb">к вам</span>.</p>
+      <p class="reviews-text">Работаю <span class="nb">по Казани</span> и <span class="nb">в радиусе</span> <span class="nb">50 км</span>. Беру 2–3 заказа <span class="nb">в день</span> — <span class="nb">не больше</span>, чтобы делать качественно.</p>
 
       <div class="cta-row">
         <button type="button" class="btn btn-primary" data-cta="photo" aria-expanded="false" aria-controls="photo-channels-2">Узнать цену по фото</button>
@@ -495,7 +505,7 @@ footer a:hover { color: var(--accent); }
   var presetMessage = 'Здравствуйте, Рустем. Хочу узнать цену на откосы и подоконники, прикладываю фото';
   var enc = encodeURIComponent(presetMessage);
   var channels = {
-    max: 'https://max.ru/+' + phoneDigits + '?text=' + enc,
+    max: 'https://max.ru/u/f9LHodD0cOLkAjgE9sCcJHhCUYn0Yi1lXj5oLhQIZXSuE9ewIVEpAVMapAc?text=' + enc,
     telegram: 'https://t.me/+' + phoneDigits + '?text=' + enc,
     phone: 'tel:+' + phoneDigits
   };
@@ -504,6 +514,29 @@ footer a:hover { color: var(--accent); }
     if (channels[ch]) a.setAttribute('href', channels[ch]);
     a.addEventListener('click', function(){ trackChannelClick(ch); });
   });
+
+  function smoothScrollTo(targetY, duration) {
+    duration = duration || 260;
+    var startY = window.pageYOffset || document.documentElement.scrollTop;
+    var diff = targetY - startY;
+    if (Math.abs(diff) < 2) return;
+    var t0 = null;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min(1, (t - t0) / duration);
+      var eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      window.scrollTo(0, Math.round(startY + diff * eased));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  function centerInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    var height = el.scrollHeight || rect.height;
+    var absTop = rect.top + (window.pageYOffset || document.documentElement.scrollTop);
+    var target = absTop - Math.max(0, (window.innerHeight - height) / 2);
+    smoothScrollTo(Math.max(0, target), 260);
+  }
 
   document.querySelectorAll('[data-cta="photo"]').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -516,10 +549,8 @@ footer a:hover { color: var(--accent); }
       trackPhotoButtonClick();
       if (willOpen) {
         trackChannelsShown();
-        // Дождаться окончания анимации max-height (~320ms) и подвинуть блок в зону видимости
-        setTimeout(function(){
-          wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 340);
+        // Стартуем скролл во время раскрытия — параллельно с max-height-анимацией
+        setTimeout(function(){ centerInViewport(wrap); }, 80);
       }
     });
   });
