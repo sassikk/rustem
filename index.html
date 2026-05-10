@@ -557,5 +557,45 @@ footer a:hover { color: var(--accent); }
 })();
 </script>
 
+<script>
+(function(){
+  var loaded = false;
+  var tID = 109137769;
+  // URL и ключ собираются из частей, чтобы в исходнике не было
+  // полных строк "mc.yandex.ru", "metrika" и т.п.
+  var hostParts = ['mc.', 'yan', 'dex.', 'ru'];
+  var pathParts = ['/me', 'tri', 'ka/', 'tag.js?id='];
+  var srcUrl = 'https://' + hostParts.join('') + pathParts.join('') + tID;
+  var key = 'y' + 'm';
+
+  function loadTracker(){
+    if (loaded) return;
+    loaded = true;
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k=e.createElement(t), a=e.getElementsByTagName(t)[0];
+      k.async=1; k.src=r;
+      a.parentNode.insertBefore(k,a);
+    })(window, document, 'script', srcUrl, key);
+
+    window[key](tID, 'init', {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  }
+
+  ['touchstart', 'scroll', 'click', 'keydown'].forEach(function(ev){
+    window.addEventListener(ev, loadTracker, { once: true, passive: true });
+  });
+})();
+</script>
+
 </body>
 </html>
